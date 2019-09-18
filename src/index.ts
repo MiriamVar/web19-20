@@ -1,34 +1,56 @@
-import * as express from "express"; //trieda express
-import * as fs from "fs"; 
+import * as express from "express";
+import * as fs from "fs";
 import * as asideMenu from "./asideMenu.json";
-import * as workshopsMenu from "./workshopsMenu.json";
+import * as headerMenu from "./headerMenu.json";
+import {linkGenerator} from "./linkGenerator";
 
 console.log(asideMenu);
 const app = express();
 const router = express.Router();
 
-
-app.use(express.static("public")); //ma tahat staticke stranky z public 
-app.set("view engine", "ejs");  //ma sa pouzivat ejs 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
 app.use(router);
 app.use(function(_req, res) {
- res.status(404).render("404");
+  res.status(404).render("404");
 });
 
-
-// index page , ak su routre tak sa vykonavaju pred app.use(router)
-router.get("/", function(_req, res) { //ked premennu nepouzivat v tele tak dam pred nu _
- res.render("index", {page: "home", menu: asideMenu, menu2: workshopsMenu});    //views/index.ejs
+// index page
+router.get("/", function(_req, res) {
+  res.render("index", {
+    page: "home",
+    asideMenu,
+    headerMenu,
+    linkGenerator
+  }); // views/index.ejs
 });
 
 router.get("/:page", function(req, res) {
-    if (fs.existsSync("views/pages/" + req.params.page + ".ejs")) {
-        res.render("index", { page: req.params.page, menu: asideMenu, menu2: workshopsMenu});
-        } else {
-        res.status(404).render("404");
-        }       
-   });
+  if (fs.existsSync("views/pages/" + req.params.page + ".ejs")) {
+    res.render("index", {
+      page: req.params.page,
+      asideMenu,
+      headerMenu,
+      linkGenerator
+    });
+  } else {
+    res.status(404).render("404");
+  }
+});
+
+router.get("/ws/:page", function(req, res) {
+  if (fs.existsSync("views/pages/ws/" + req.params.page + ".ejs")) {
+    res.render("index", {
+      page: "ws/"+ req.params.page,
+      asideMenu,
+      headerMenu,
+      linkGenerator
+    });
+  } else {
+    res.status(404).render("404");
+  }
+});
 
 app.listen(8080);
 console.log("listening on port 8080");

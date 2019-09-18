@@ -99,8 +99,12 @@ input.inputbutton {
 #header {
   background: #fff;
 }
-
-
+#header .headerphoto {
+  background: #fff url(../images/foto-zornicka.png) no-repeat;
+}
+#logo-box {
+  background-image: url(logo_cierne.jpg) no-repeat;
+}
 #logo-box h1#logo,
 #logo-box h1.sitetitle {
   color: #fff;

@@ -1,103 +1,118 @@
-body{
+body {
   margin: auto;
   padding: inherit;
   background-color: rgb(146, 184, 90);
 }
 
-
-header{
+header {
   padding-left: 21%;
   padding-right: 21%;
   padding-top: 2%;
   padding-bottom: 2%;
   background-color: white;
+  position: sticky;
+  top: 0%;
 }
 
-header .site-banner{
+header .site-banner {
   padding-right: 3%;
 }
 
+header .header-foto {
+  position: absolute;
+  right: 320px;
+}
 
-main{
+main {
   float: left;
   background-color: white;
   margin-left: 19.5%;
-  height: 600px;
   width: 43%;
 }
 
-main h1{
+main h1 {
   text-align: center;
 }
-main a{
+main a {
   color: rgb(146, 184, 90);
 }
-main h3{
-color: rgb(146, 184, 90);
+main h3 {
+  color: rgb(146, 184, 90);
 }
-main p{
+main p {
   text-align: left;
 }
-main article{
+main article {
   padding: 1%;
 }
+main article picture.lfloat{
+  float: left;
+  padding-right: 5px;
+}
 
+main article picture.rfloat{
+  float: right;
+  padding-left: 5px;
+}
 
-aside#sidebar{
+aside#sidebar {
   display: inline-block;
   background-color: white;
   width: 16.5%;
   padding: 0.5%;
-  height: 585px;
 }
-aside#sidebar  h2{
+aside#sidebar h2 {
   color: rgb(146, 184, 90);
   text-align: center;
   margin: 0;
   padding-top: 5%;
+  transform: rotate(180deg);
 }
-aside#sidebar #searchform fieldset{
+aside#sidebar #searchform fieldset {
   margin: 0;
   padding: 0;
   border-width: 0;
   text-align: center;
 }
-aside#sidebar nav{
+aside#sidebar nav {
   color: rgb(146, 184, 90);
 }
 aside#sidebar nav > ul {
- color: rgb(146, 184, 90);
-}
-aside#sidebar nav > ul > li > a{
- color: rgb(146, 184, 90);
-}
-aside#sidebar nav > ul > li > ul {
- color: rgb(146, 184, 90);
-}
-aside#sidebar nav > ul > li > ul > li > a{
   color: rgb(146, 184, 90);
 }
-aside#sidebar #sponsors > a{
- margin-left: 21%;
- margin-right: 21%;
-
+aside#sidebar nav > ul > li > a {
+  color: rgb(146, 184, 90);
 }
-aside#sidebar #sponsors h2{
+aside#sidebar nav > ul > li > ul {
+  color: rgb(146, 184, 90);
+}
+aside#sidebar nav > ul > li > ul > li > a {
+  color: rgb(146, 184, 90);
+}
+
+aside#sidebar #sponsors{
+  position: fixed;
+  top: 40%;
+  right: 22px;
+  background-color: bisque;
+  transform: skewX(30deg);
+}
+aside#sidebar #sponsors > a {
+  margin-right: 21%;
+}
+aside#sidebar #sponsors h2 {
   padding-bottom: 5%;
 }
-aside#sidebar .active a {
-  color: darkslategray;
-}
 
-
-footer{
+footer {
   text-align: center;
   background-color: white;
   padding-bottom: 0.7%;
+  clear: both;
 }
-footer p{
+footer p {
   padding-top: 0.5%;
 }
-footer p > a{
+footer p > a {
   color: rgb(146, 184, 90);
 }

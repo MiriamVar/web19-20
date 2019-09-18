@@ -1,25 +1,49 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express"); //trieda express
+const express = require("express");
 const fs = require("fs");
 const asideMenu = require("./asideMenu.json");
-const workshopsMenu = require("./workshopsMenu.json");
+const headerMenu = require("./headerMenu.json");
+const linkGenerator_1 = require("./linkGenerator");
 console.log(asideMenu);
 const app = express();
 const router = express.Router();
-app.use(express.static("public")); //ma tahat staticke stranky z public 
-app.set("view engine", "ejs"); //ma sa pouzivat ejs 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 app.use(router);
 app.use(function (_req, res) {
     res.status(404).render("404");
 });
-// index page , ak su routre tak sa vykonavaju pred app.use(router)
+// index page
 router.get("/", function (_req, res) {
-    res.render("index", { page: "home", menu: asideMenu, menu2: workshopsMenu }); //views/index.ejs
+    res.render("index", {
+        page: "home",
+        asideMenu,
+        headerMenu,
+        linkGenerator: linkGenerator_1.linkGenerator
+    }); // views/index.ejs
 });
 router.get("/:page", function (req, res) {
     if (fs.existsSync("views/pages/" + req.params.page + ".ejs")) {
-        res.render("index", { page: req.params.page, menu: asideMenu, menu2: workshopsMenu });
+        res.render("index", {
+            page: req.params.page,
+            asideMenu,
+            headerMenu,
+            linkGenerator: linkGenerator_1.linkGenerator
+        });
+    }
+    else {
+        res.status(404).render("404");
+    }
+});
+router.get("/ws/:page", function (req, res) {
+    if (fs.existsSync("views/pages/ws/" + req.params.page + ".ejs")) {
+        res.render("index", {
+            page: "ws/" + req.params.page,
+            asideMenu,
+            headerMenu,
+            linkGenerator: linkGenerator_1.linkGenerator
+        });
     }
     else {
         res.status(404).render("404");

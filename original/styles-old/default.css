@@ -206,7 +206,10 @@ input.inputbutton {
 }
 #header #logo-box {
   position: absolute;
+  width: 631px;
+  height: 156px;
   z-index: 3;
+  background-image: url(../images/itat2019-banner.png);
 }
 #logo-box h1#logo,
 #logo-box h1.sitetitle {

@@ -7,7 +7,7 @@
 
 <body>
 	<header>
-		<%- include('partial/header',{menu2: menu2}); %>
+		<%- include('partial/header', { page, headerMenu, linkGenerator }); %>
 	</header>
 
 	<main>
@@ -15,9 +15,8 @@
 	</main>
 
 	<aside id="sidebar">
-		<%- include('partial/aside',{menu: menu}); %>
+		<%- include('partial/aside', { page, asideMenu, linkGenerator }); %>
 	</aside>
-
 	<footer>
 		<%- include('partial/footer'); %>
 	</footer>
