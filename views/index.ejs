@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+	<%- include('partial/head'); %>
+</head>
+
+<body>
+	<header>
+		<%- include('partial/header',{menu2: menu2}); %>
+	</header>
+
+	<main>
+		<%- include('pages/' + page); %>
+	</main>
+
+	<aside id="sidebar">
+		<%- include('partial/aside',{menu: menu}); %>
+	</aside>
+
+	<footer>
+		<%- include('partial/footer'); %>
+	</footer>
+</body>
+
+</html>

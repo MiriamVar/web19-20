@@ -1,0 +1,13 @@
+<picture class="site-banner">
+    <img src="./images/itat2019-banner.png" alt="ITAT banner" width="631" height="156">
+</picture>
+
+<picture class="header-photo">
+    <img src="./images/foto-zornicka.png" alt="Hotel zornicka" width="209" height="157">
+</picture>
+
+<ul>
+    <% menu2.forEach( shop => { %>
+        <li><a href="<%= shop.local %>"><%= shop.label %></a></li> 
+    <%}); %>
+</ul>

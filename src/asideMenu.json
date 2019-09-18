@@ -1,0 +1,19 @@
+[
+    {
+        "local": "home",
+        "label": "Úvodné informácie"
+    },
+    {
+        "local": "workshops",
+        "label": "Workshopy"
+    },
+    {
+        "local": "invited",
+        "label": "Pozvaní prednášajúci"
+    },
+    {
+        "local": "program",
+        "label": "Program",
+        "important": true
+    }
+]
