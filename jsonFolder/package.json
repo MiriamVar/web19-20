@@ -1,0 +1,27 @@
+{
+  "name": "jsonFolder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "./node_modules/.bin/tsc-watch --onSuccess \"node ./dist/\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.7.8",
+    "tsc-watch": "^3.0.1",
+    "typescript": "^3.6.2"
+  },
+  "dependecies": {
+    "node": "^12.11.0"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.141",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
+    "node": "^12.11.0"
+  }
+}

@@ -1,39 +1,33 @@
 body {
+  max-width: 1000px;
   margin: auto;
-  padding: inherit;
   background-color: rgb(146, 184, 90);
+  display: grid;
+  grid-template-columns: 5% 25% 65% 5%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". header header ."
+    ". aside main ."
+    ". footer footer .";
 }
 
 header {
-  padding-left: 21%;
-  padding-right: 21%;
-  padding-top: 2%;
-  padding-bottom: 1%;
-  background-color: white;
-  position: sticky;
-  top: 0%;
-}
-
-header .site-banner {
-  padding-right: 3%;
-}
-
-header .header-foto {
-  position: absolute;
-  right: 320px;
+  padding: 0 3%;
+  position: relative;
+  display: block;
+  grid-area: header;
 }
 
 header ul  {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   background-color: rgb(146, 184, 90);
-  height: 40px;
-  padding-left: 0;
+  padding: 3px 0; 
+  margin-top: 0;
 }
 
 header ul li{
-  display: flex;
+  display: block;
   background-color: rgb(117, 148, 72);
   padding: 1.25% 8% 1.25%;
 }
@@ -42,12 +36,14 @@ header ul li a {
   color: white;
 }
 
+header p{
+  display: none;
+}
+
 
 main {
-  float: left;
   background-color: white;
-  margin-left: 19.5%;
-  width: 43%;
+  grid-area: main;
 }
 
 main h1 {
@@ -75,14 +71,12 @@ main article picture.rfloat{
   padding-left: 5px;
 }
 
-main ul#workshops-panels{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  
-}
 
-main ul#workshops-panels li{
+main ul#workshops-links{
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   display: block;
   flex-basis: 100px;
   margin: 1%;
@@ -91,15 +85,54 @@ main ul#workshops-panels li{
   text-align: center;
 }
 
-main ul#workshops-panels a{
+main ul#workshops-panels{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+main ul#workshops-panels li{
+  display: block;
+  flex-basis: 100px;
+  margin: 3%;
+  background-color: rgb(117, 148, 72);
+  padding: 2%;
+  min-height: 120px;
+  text-align: center;
+  position: relative;
+}
+
+main ul#workshops-panels li a{
   color: white;
   text-decoration: none;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+
+main #previous-table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+main #previous-table tr td{
+  border: 1px solid grey;
+}
+main #previous-table tr:nth-child(2n){
+  background-color:khaki;
+}
+
+main iframe{
+  width: 100%;
+  height: 150%;
 }
 
 aside#sidebar {
-  display: inline-block;
+  grid-area: aside;
+  /* display: inlineblock; */
   background-color: white;
-  width: 16.5%;
+  /* width: 16.5%; */
   padding: 0.5%;
 
 }
@@ -143,7 +176,6 @@ aside#sidebar nav a{
 }
 
 aside#sidebar #sponsors{
-  position: fixed;
   top: 40%;
   right: 22px;
   background-color: bisque;
@@ -158,10 +190,11 @@ aside#sidebar #sponsors h2 {
 
 
 footer {
+  grid-area: footer;
   text-align: center;
   background-color: white;
   padding-bottom: 0.7%;
-  clear: both;
+  /* clear: both; */
 }
 footer p {
   padding-top: 0.5%;
@@ -182,8 +215,8 @@ footer p > a {
   aside#sidebar #sponsors{
     position: static;
     border: 0;
-    width: inherit;
-    padding: 2px;
+    width: initial;
+    padding: 0;
   }
 }
 
@@ -193,8 +226,29 @@ footer p > a {
   }
 }
 
-@media (max-width: 1000px){
-  header picture img{
+@media(max-width: 735px){
+  body{
+    max-width: 100%;
+    background-color: rgb(146, 184, 90);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+  main #previous-table th:first-child, td:first-child{
     display: none;
+  }
+}
+
+@media (max-width: 1000px){
+  header .header-foto, .site-banner{
+    display: none;
+  }
+  header p{
+    display: block;
   }
 }
