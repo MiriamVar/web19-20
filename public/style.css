@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
 body {
   background-color: rgb(146, 184, 90);
   display: grid;
@@ -10,7 +12,7 @@ body {
 }
 
 header {
-  padding: 0 5%;
+  padding: 0 45px;
   position: relative;
   display: block;
   grid-area: header;
@@ -30,7 +32,7 @@ header ul li{
   width: 50%;
   margin-top: 0.5%;
   margin-right: 0.5%;
-  padding: 1%;
+  padding: 10px;
   text-align: center;
 }
 header ul li a {
@@ -40,10 +42,13 @@ header ul li a {
 
 header p{
   display: none;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Playfair Display', serif;
 }
 
 header .site-banner{
-  padding-left:  3%;
+  padding-left:  30px;
 }
 
 
@@ -65,7 +70,7 @@ main p {
   text-align: left;
 }
 main article {
-  padding: 1%;
+  padding: 10px;
 }
 main article picture.lfloat{
   float: left;
@@ -87,7 +92,7 @@ main ul#workshops-links{
   flex-basis: 100px;
   margin: 1%;
   background-color: rgb(117, 148, 72);
-  padding: 1%;
+  padding: 10px;
   text-align: center;
 }
 
@@ -102,7 +107,7 @@ main ul#workshops-panels li{
   flex-basis: 100px;
   margin: 3%;
   background-color: rgb(117, 148, 72);
-  padding: 2%;
+  padding: 20px;
   min-height: 120px;
   text-align: center;
   position: relative;
@@ -118,14 +123,27 @@ main ul#workshops-panels li a{
   position: absolute;
 }
 
-main #previous-table {
+main .previous-table {
   border: 1px solid grey;
   border-collapse: collapse;
+  display: table;
 }
-main #previous-table tr td{
+main .previous-table tr td{
   border: 1px solid grey;
 }
-main #previous-table tr:nth-child(2n){
+main .previous-table tr:nth-child(2n){
+  background-color:khaki;
+}
+
+main .important-dates {
+  border: 1px solid grey;
+  border-collapse: collapse;
+
+}
+main .important-dates tr td{
+  border: 1px solid grey;
+}
+main .important-dates tr:nth-child(2n){
   background-color:khaki;
 }
 
@@ -139,14 +157,14 @@ aside#sidebar {
   /* display: inlineblock; */
   background-color: white;
   /* width: 16.5%; */
-  padding: 0.5%;
+  padding: 5px;
 
 }
 aside#sidebar h2 {
   color: rgb(146, 184, 90);
   text-align: center;
   margin: 0;
-  padding-top: 5%;
+  padding-top: 10px;
   transform: rotate(180deg);
 }
 aside#sidebar #searchform fieldset {
@@ -199,11 +217,11 @@ footer {
   grid-area: footer;
   text-align: center;
   background-color: white;
-  padding-bottom: 0.7%;
+  padding-bottom: 7px;
   /* clear: both; */
 }
 footer p {
-  padding-top: 0.5%;
+  padding-top: 5px;
 }
 footer p > a {
   color: rgb(146, 184, 90);
@@ -245,13 +263,26 @@ footer p > a {
       "aside"
       "footer";
   }
-  main #previous-table th:first-child, td:first-child{
+
+  main .important-dates th:first-child, td:first-child{
+    display: block;
+  }
+
+  main .previous-table th:first-child, td:first-child{
     display: none;
   }
+
 }
 
 @media (max-width: 1000px){
-  header .header-foto, .site-banner{
+  header .header-foto {
+    display: none;
+  }
+
+}
+
+@media(max-width: 720px){
+  header .site-banner{
     display: none;
   }
   header p{
