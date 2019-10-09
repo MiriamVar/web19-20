@@ -264,11 +264,7 @@ footer p > a {
       "footer";
   }
 
-  main .important-dates th:first-child, td:first-child{
-    display: block;
-  }
-
-  main .previous-table th:first-child, td:first-child{
+  main table.previous-table th:first-child, main table.previous-table td:first-child{
     display: none;
   }
 
